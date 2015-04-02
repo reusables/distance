@@ -6,6 +6,9 @@ php:
 
 before_script:
   - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install
+  - php composer.phar install --no-interaction
 
 script: ./vendor/bin/phpunit
+
+after_script:
+  - php ./vendor/bin/coveralls
