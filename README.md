@@ -16,8 +16,14 @@ composer require reusables/distance
 
 use \Reusables\Unit\Distance;
 
+// instantiate
 $distance = new Distance(36, Distance::INCHES);
-$feet = $distance->to(Distance::FEET)->value(); // 3
+
+// convert
+$feet = $distance->to(Distance::FEET)->value(); // 3 (FEET)
+
+// add
+$inches = $distance->add(new Distance(1, Distance::FEET))->value(); // 48 (INCHES)
 ```
 
 See docblocks for more details.
