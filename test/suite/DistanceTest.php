@@ -48,6 +48,26 @@ class DistanceTest extends PHPUnit_Framework_TestCase {
     return $this->loadProviderJson('additions');
   }
 
+  /**
+   * @dataProvider subtractionsProvider
+   */
+  public function test_shouldSubtractDistances($value1, $unit1, $value2, $unit2, $expected) {
+    // arrange
+    $distance1 = new Distance($value1, $unit1);
+    $distance2 = new Distance($value2, $unit2);
+
+    // act
+    $actual = $distance1->subtract($distance2);
+
+    // assert
+    $this->assertEquals($expected, $actual->value());
+    $this->assertEquals($unit1, $actual->unit());
+  }
+
+  public function subtractionsProvider() {
+    return $this->loadProviderJson('subtractions');
+  }
+
 
   protected function loadProviderJson($name) {
     $json = file_get_contents(__DIR__ . '/../providers/' . $name . '.json');

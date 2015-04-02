@@ -1,0 +1,8 @@
+[
+  [36, "INCHES", 12, "INCHES", 24],
+  [36, "INCHES", 1, "FEET", 24],
+  [3, "FEET", 1, "FEET", 2],
+  [3, "FEET", 12, "INCHES", 2],
+  [4, "FEET", 1, "YARD", 1],
+  [1, "YARD", 12, "INCHES", 0.6666666666666666]
+]

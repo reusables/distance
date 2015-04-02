@@ -92,12 +92,22 @@ class Distance {
   }
 
   /**
-   * Add a distance to this distance
+   * Add a distance
    * @param Distance $distance Another Distance object
    * @return Distance Returns a new Distance object of same unit as current Distance
    */
   public function add(Distance $distance) {
     $value = $this->value + $distance->to($this->unit)->value();
+    return new Distance($value, $this->unit);
+  }
+
+  /**
+   * Subtract a distance
+   * @param Distance $distance Another Distance object
+   * @return Distance Returns a new Distance object of same unit as current Distance
+   */
+  public function subtract(Distance $distance) {
+    $value = $this->value - $distance->to($this->unit)->value();
     return new Distance($value, $this->unit);
   }
 
