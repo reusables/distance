@@ -19,25 +19,28 @@ class Distance {
   const NANOMETERS = 'NANOMETERS';
   const PICOMETERS = 'PICOMETERS';
 
-  // TODO can I use constants for keys?
   /**
    * Lookup table for conversion factors to meters
+   *
+   * Divide by factor to convert to meters.
+   * Multiply by factor to convert from meters.
+   *
    * @var array
    */
   protected $factors = array(
-    "TERAMETERS" => 1000000000000,
-    "GIGAMETERS" => 1000000000,
-    "MEGAMETERS" => 1000000,
-    "KILOMETERS" => 1000,
-    "HECTOMETERS" => 100,
-    "DECAMETERS" => 10,
-    "METERS" => 1,
-    "DECIMETERS" => 0.1,
-    "CENTIMETERS" => 0.01,
-    "MILLIMETERS" => 0.001,
-    "MICROMETERS" => 0.000001,
-    "NANOMETERS" => 0.000000001,
-    "PICOMETERS" => 0.000000000001,
+    self::TERAMETERS => 1000000000000,
+    self::GIGAMETERS => 1000000000,
+    self::MEGAMETERS => 1000000,
+    self::KILOMETERS => 1000,
+    self::HECTOMETERS => 100,
+    self::DECAMETERS => 10,
+    self::METERS => 1,
+    self::DECIMETERS => 0.1,
+    self::CENTIMETERS => 0.01,
+    self::MILLIMETERS => 0.001,
+    self::MICROMETERS => 0.000001,
+    self::NANOMETERS => 0.000000001,
+    self::PICOMETERS => 0.000000000001,
   );
 
   /**
@@ -67,6 +70,7 @@ class Distance {
   }
 
   public function to($unit) {
-    return $this->value / $this->factors[$unit];
+    $meters = $this->value * $this->factors[$this->unit];
+    return $meters / $this->factors[$unit];
   }
 }

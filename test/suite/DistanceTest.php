@@ -22,6 +22,26 @@ class DistanceTest extends PHPUnit_Framework_TestCase {
     return $this->loadProviderJson('conversions/from_meters');
   }
 
+
+  /**
+   * @dataProvider convertToMetersProvider
+   */
+  public function test_shouldConvertToMeters($input, $from, $expected, $to) {
+    // arrange
+    $distance = new Distance($input, $this->unit($from));
+
+    // act
+    $actual = $distance->to($this->unit($to));
+
+    // assert
+    $this->assertEquals($expected, $actual);
+  }
+
+  public function convertToMetersProvider() {
+    return $this->loadProviderJson('conversions/to_meters');
+  }
+
+
   protected function loadProviderJson($name) {
     $json = file_get_contents(__DIR__ . '/../providers/' . $name . '.json');
     return json_decode($json);
