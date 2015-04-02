@@ -1,0 +1,7 @@
+[
+  [1, "MILE", 5280, "FEET"],
+  [1, "YARD", 3, "FEET"],
+  [1, "FEET", 12, "INCHES"],
+  [12, "INCHES", 1, "FEET"],
+  [36, "INCHES", 3, "FEET"]
+]

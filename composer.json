@@ -1,0 +1,21 @@
+{
+    "name": "reusables/distance",
+    "description": "The Distance Object",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.5",
+        "satooshi/php-coveralls": "0.6.*"
+    },
+    "authors": [
+        {
+            "name": "Joshua Stoutenburg",
+            "email": "jehoshua02@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Reusables\\Unit\\": "src/"}
+    }
+}
