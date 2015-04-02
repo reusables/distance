@@ -5,40 +5,24 @@ use \Reusables\Unit\Distance;
 class DistanceTest extends PHPUnit_Framework_TestCase {
 
   /**
-   * @dataProvider convertFromMetersProvider
+   * @dataProvider conversionsProvider
    */
-  public function test_shouldConvertFromMeters($input, $from, $expected, $to) {
+  public function test_shouldConvertToAndFromVariousUnits($input, $from, $expected, $to) {
     // arrange
     $distance = new Distance($input, $this->unit($from));
 
     // act
-    $actual = $distance->to($this->unit($to));
+    $actual = $distance->to($this->unit($to))->value();
 
     // assert
     $this->assertEquals($expected, $actual);
   }
 
-  public function convertFromMetersProvider() {
-    return $this->loadProviderJson('conversions/from_meters');
-  }
-
-
-  /**
-   * @dataProvider convertToMetersProvider
-   */
-  public function test_shouldConvertToMeters($input, $from, $expected, $to) {
-    // arrange
-    $distance = new Distance($input, $this->unit($from));
-
-    // act
-    $actual = $distance->to($this->unit($to));
-
-    // assert
-    $this->assertEquals($expected, $actual);
-  }
-
-  public function convertToMetersProvider() {
-    return $this->loadProviderJson('conversions/to_meters');
+  public function conversionsProvider() {
+    return array_merge(
+      $this->loadProviderJson('conversions/to_meters'),
+      $this->loadProviderJson('conversions/from_meters')
+    );
   }
 
 

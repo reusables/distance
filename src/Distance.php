@@ -65,8 +65,21 @@ class Distance {
     $this->unit = $unit;
   }
 
+  /**
+   * Convert to specified unit
+   * @param  constant $unit One of the Distance class constants
+   * @return Distance       Returns new Distance object
+   */
   public function to($unit) {
     $meters = $this->value * self::$factors[$this->unit];
-    return $meters / self::$factors[$unit];
+    return new self($meters / self::$factors[$unit], $unit);
+  }
+
+  /**
+   * Returns the current value
+   * @return number
+   */
+  public function value() {
+    return $this->value;
   }
 }
