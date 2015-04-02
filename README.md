@@ -3,7 +3,7 @@
 The Distance Object.
 
 [![Build Status](https://travis-ci.org/reusables/distance.svg)](https://travis-ci.org/reusables/distance)
-[![Coverage Status](https://coveralls.io/repos/reusables/distance/badge.svg)](https://coveralls.io/r/reusables/distance)
+[![Coverage Status](https://coveralls.io/repos/reusables/distance/badge.svg?refresh=1)](https://coveralls.io/r/reusables/distance)
 
 ## Install
 
