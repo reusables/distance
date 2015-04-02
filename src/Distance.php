@@ -19,15 +19,25 @@ class Distance {
   const NANOMETERS = 'NANOMETERS';
   const PICOMETERS = 'PICOMETERS';
 
+  // english
+  const MILE = 'MILE';
+  const YARD = 'YARD';
+  const FEET = 'FEET';
+  const INCHES = 'INCHES';
+
+
   /**
    * Lookup table for conversion factors to meters
    *
-   * Divide by factor to convert to meters.
-   * Multiply by factor to convert from meters.
+   * The factor tells how many meters are in one of each unit.
+   *
+   * Multiply by factor to convert to meters.
+   * Divide by factor to convert from meters.
    *
    * @var array
    */
   protected static $factors = array(
+    // metric
     self::TERAMETERS => 1000000000000,
     self::GIGAMETERS => 1000000000,
     self::MEGAMETERS => 1000000,
@@ -41,6 +51,12 @@ class Distance {
     self::MICROMETERS => 0.000001,
     self::NANOMETERS => 0.000000001,
     self::PICOMETERS => 0.000000000001,
+
+    // english
+    self::MILE => 1609.344,
+    self::YARD => 0.9144,
+    self::FEET => 0.3048,
+    self::INCHES => 0.0254,
   );
 
   /**

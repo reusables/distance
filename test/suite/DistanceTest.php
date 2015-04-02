@@ -21,7 +21,9 @@ class DistanceTest extends PHPUnit_Framework_TestCase {
   public function conversionsProvider() {
     return array_merge(
       $this->loadProviderJson('conversions/to_meters'),
-      $this->loadProviderJson('conversions/from_meters')
+      $this->loadProviderJson('conversions/from_meters'),
+      $this->loadProviderJson('conversions/meters_to_english'),
+      $this->loadProviderJson('conversions/english_to_meters')
     );
   }
 
