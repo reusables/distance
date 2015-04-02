@@ -19,48 +19,54 @@ class Distance {
   const NANOMETERS = 'NANOMETERS';
   const PICOMETERS = 'PICOMETERS';
 
+  // TODO can I use constants for keys?
   /**
-   * Original value in meters
+   * Lookup table for conversion factors to meters
+   * @var array
+   */
+  protected $factors = array(
+    "TERAMETERS" => 1000000000000,
+    "GIGAMETERS" => 1000000000,
+    "MEGAMETERS" => 1000000,
+    "KILOMETERS" => 1000,
+    "HECTOMETERS" => 100,
+    "DECAMETERS" => 10,
+    "METERS" => 1,
+    "DECIMETERS" => 0.1,
+    "CENTIMETERS" => 0.01,
+    "MILLIMETERS" => 0.001,
+    "MICROMETERS" => 0.000001,
+    "NANOMETERS" => 0.000000001,
+    "PICOMETERS" => 0.000000000001,
+  );
+
+  /**
+   * Original value
    * @var number
    */
   protected $value = 0;
 
   /**
-   * Constructor
-   * @param number $value Distance in meters
+   * Original unit
+   * @var constant
    */
-  public function __construct($value) {
+  protected $unit = self::METERS;
+
+  /**
+   * Constructor
+   * @param number $value Distance
+   */
+  /**
+   * Constructor
+   * @param number $value Distance
+   * @param constant $unit One of the Distance class constants
+   */
+  public function __construct($value, $unit = self::METERS) {
     $this->value = $value;
+    $this->unit = $unit;
   }
 
   public function to($unit) {
-    switch ($unit) {
-      case self::TERAMETERS:
-        return $this->value / 1000000000000;
-      case self::GIGAMETERS:
-        return $this->value / 1000000000;
-      case self::MEGAMETERS:
-        return $this->value / 1000000;
-      case self::KILOMETERS:
-        return $this->value / 1000;
-      case self::HECTOMETERS:
-        return $this->value / 100;
-      case self::DECAMETERS:
-        return $this->value / 10;
-      case self::METERS:
-        return $this->value;
-      case self::DECIMETERS:
-        return $this->value / 0.1;
-      case self::CENTIMETERS:
-        return $this->value / 0.01;
-      case self::MILLIMETERS:
-        return $this->value / 0.001;
-      case self::MICROMETERS:
-        return $this->value / 0.000001;
-      case self::NANOMETERS:
-        return $this->value / 0.000000001;
-      case self::PICOMETERS:
-        return $this->value / 0.000000000001;
-    };
+    return $this->value / $this->factors[$unit];
   }
 }
