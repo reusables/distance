@@ -1,4 +1,4 @@
-# Distance
+# Distance [![Build Status](https://travis-ci.org/reusables/distance.svg)](https://travis-ci.org/reusables/distance)
 
 The Distance Object.
 
