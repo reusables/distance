@@ -1,6 +1,6 @@
 <phpunit>
     <testsuites>
-        <testsuite name="Test Suite">
+        <testsuite name="all">
             <directory>./test/suite/</directory>
         </testsuite>
     </testsuites>
