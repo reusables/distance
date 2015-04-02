@@ -23,7 +23,8 @@ class DistanceTest extends PHPUnit_Framework_TestCase {
       $this->loadProviderJson('conversions/to_meters'),
       $this->loadProviderJson('conversions/from_meters'),
       $this->loadProviderJson('conversions/meters_to_english'),
-      $this->loadProviderJson('conversions/english_to_meters')
+      $this->loadProviderJson('conversions/english_to_meters'),
+      $this->loadProviderJson('conversions/english_to_english')
     );
   }
 
