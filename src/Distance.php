@@ -27,7 +27,7 @@ class Distance {
    *
    * @var array
    */
-  protected $factors = array(
+  protected static $factors = array(
     self::TERAMETERS => 1000000000000,
     self::GIGAMETERS => 1000000000,
     self::MEGAMETERS => 1000000,
@@ -58,10 +58,6 @@ class Distance {
   /**
    * Constructor
    * @param number $value Distance
-   */
-  /**
-   * Constructor
-   * @param number $value Distance
    * @param constant $unit One of the Distance class constants
    */
   public function __construct($value, $unit = self::METERS) {
@@ -70,7 +66,7 @@ class Distance {
   }
 
   public function to($unit) {
-    $meters = $this->value * $this->factors[$this->unit];
-    return $meters / $this->factors[$unit];
+    $meters = $this->value * self::$factors[$this->unit];
+    return $meters / self::$factors[$unit];
   }
 }
