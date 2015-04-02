@@ -12,8 +12,8 @@
     </filter>
 
     <logging>
-        <log type="coverage-clover" target="./test/coverage/clover.xml" />
-        <log type="coverage-html" target="./test/coverage" />
+        <log type="coverage-clover" target="./build/test/coverage/clover.xml" />
+        <log type="coverage-html" target="./build/test/coverage" />
         <log type="coverage-text" target="php://stdout" />
     </logging>
 </phpunit>
