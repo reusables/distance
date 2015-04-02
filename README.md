@@ -1,4 +1,7 @@
-# Distance [![Build Status](https://travis-ci.org/reusables/distance.svg)](https://travis-ci.org/reusables/distance)
+# Distance
+
+[![Build Status](https://travis-ci.org/reusables/distance.svg)](https://travis-ci.org/reusables/distance)
+[![Coverage Status](https://coveralls.io/repos/reusables/distance/badge.svg)](https://coveralls.io/r/reusables/distance)
 
 The Distance Object.
 
